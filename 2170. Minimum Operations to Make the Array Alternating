@@ -1,0 +1,90 @@
+class Solution {
+public:
+    int minimumOperations(vector<int>& nums) {
+        int n=nums.size();
+        vector<int>v1;
+        vector<int>v2;
+        int i;
+        for(i=0;i<n;i=i+2)
+            v1.push_back(nums[i]);  //1 2 2 2 2  v1=1,2,2
+        for(i=1;i<n;i=i+2)
+            v2.push_back(nums[i]);  //v2=2,2
+        sort(v1.begin(),v1.end());
+        sort(v2.begin(),v2.end());
+        int x,z,k,count;                
+        int y=0;
+        i=0;
+        while(i<v1.size())
+        {
+            count=0;
+            x=v1[i];    
+            while(x==v1[i] && i<v1.size())
+            {
+                count++;
+                i++;
+                if(i>=v1.size())
+                {
+                    break;
+                }
+            }
+            if(count>=y)
+            {
+                z=y;         //z=1,y=2,k=2
+                y=count;
+                k=x;
+            }
+            else if(count>z)
+            {
+                z=count;
+            }
+        }
+        i=0;
+        int a,c,d;
+        int b=0;
+        while(i<v2.size())
+        {
+            count=0;
+            a=v2[i];                       //a=2,count=2
+            while(a==v2[i] && i<v2.size())
+            {
+                count++;
+                i++;
+                if(i>=v2.size())
+                {
+                    break;
+                }
+            }
+            if(count>=b)        //d=0,b=2,c=2
+            {
+                d=b;
+                b=count;
+                c=a;
+            }
+            else if(count>d)
+            {
+                d=count;
+            }
+        }
+        int u,h;
+        cout<<k<<endl<<c<<endl<<y<<endl<<d<<endl<<z<<endl<<b<<endl;
+        if(c==k)
+        {
+            u=v1.size()-y+v2.size()-d; //4-4+3-1
+            h=v1.size()-z+v2.size()-b; //4-0+3-2
+            if(u<h)
+            {
+                return(u);
+            }
+            else
+            {
+                return(h);
+            }
+        }
+        
+        return(v1.size()-y+v2.size()-b);   //3-2+2-2
+        
+        
+        
+        
+    }
+};

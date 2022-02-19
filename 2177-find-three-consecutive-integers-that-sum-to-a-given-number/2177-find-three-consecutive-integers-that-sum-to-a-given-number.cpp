@@ -3,7 +3,7 @@ public:
     vector<long long> sumOfThree(long long num) {
         vector<long long int> v;
         double b;
-        b=(num-3.0000)/3;
+        b=(num-3.0)/3;
         long long int c=b;
         if(c==b)
         {

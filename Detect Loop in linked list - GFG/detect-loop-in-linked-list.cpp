@@ -51,7 +51,7 @@ class Solution
         // your code here
         Node* a=head;
         int i=0;
-        while(i<20000)
+        while(i<10001)
         {
             if(a->next==NULL)
             {

@@ -57,9 +57,8 @@ class Solution
             {
                 return(false);
             }
-           a=a->next;
-           i++;
-           
+            a=a->next;
+            i++;
         }
         return(true);
     }

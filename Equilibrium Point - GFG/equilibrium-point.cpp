@@ -13,7 +13,7 @@ class Solution{
     
         // Your code here
         int i=0,j=n-1;
-        int sum1=0,sum2=0;
+        long long int sum1=0,sum2=0;
         int x=0,y=0;
         if(n==1)
         {
@@ -74,6 +74,28 @@ class Solution{
             
         }
         return(-1);
+        
+        /*int equilibriumPoint(long long a[], int n) {
+    
+        // Your code here
+        int sum=0,left=0;
+        for(int i=0;i<n;i++)
+    {
+        sum+=a[i];
+    }
+    for(int i=0;i<n;i++)
+    {
+        sum-=a[i];
+        //left-sum;
+        if(left==sum)
+        {
+            return i+1;
+        }
+        left+=a[i];
+    }
+    return -1;
+    }*/
+        
     }
 
 };

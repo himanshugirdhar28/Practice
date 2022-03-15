@@ -14,6 +14,7 @@ class Solution{
         //Your code here
         long long int k=0;
         int a=0;
+        int b=0;
         int n=str.size();
         for(int i=0;i<n;i++)
         {
@@ -24,6 +25,11 @@ class Solution{
             else if (str[i]==45)
             {
                 a=1;
+                if(b==1)
+                {
+                    return(-1);
+                }
+                b=1;
             }
             else
             {
@@ -37,7 +43,6 @@ class Solution{
         {
            return(k); 
         }
-        
     }
 };
 

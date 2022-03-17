@@ -41,7 +41,7 @@ int findElement(int arr[], int n) {
             k=i;
         }
     }
-    if(k==n-1 || k==0)
+    if(k==n-1)
     {
         return(-1);
     }

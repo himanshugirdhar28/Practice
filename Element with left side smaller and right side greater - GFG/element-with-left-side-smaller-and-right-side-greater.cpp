@@ -24,6 +24,7 @@ int findElement(int arr[], int n) {
     int x=0;
     v=arr[0];
     k=0;
+    int z=arr[0];
     for(i=1;i<n;i++)
     {
         if(arr[i]<v)
@@ -34,14 +35,23 @@ int findElement(int arr[], int n) {
                 return(-1);
             }
         }
-        else if(arr[i]>=v && x==0)
+        else if(arr[i]>=z && x==0)
         {
             x=1;
             v=arr[i];
+            z=v;
             k=i;
         }
+        else if(x==0 && arr[i]<z)
+        {
+            v=-1;
+        }
+        if(arr[i]>=z)
+        {
+            z=arr[i];
+        }
     }
-    if(k==n-1)
+    if(k==n-1 || k==0)
     {
         return(-1);
     }

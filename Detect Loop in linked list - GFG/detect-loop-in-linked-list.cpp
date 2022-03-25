@@ -49,7 +49,7 @@ class Solution
     bool detectLoop(Node* head)
     {
         // your code here
-        /*Node* a=head;
+        Node* a=head;
         int i=0;
         while(i<10001)
         {
@@ -60,8 +60,8 @@ class Solution
             a=a->next;
             i++;
         }
-        return(true);*/
-        Node* a=head;
+        return(true);
+        /*Node* a=head;
         Node* b;
         while(1)
         {
@@ -80,7 +80,7 @@ class Solution
             b=a;
             a=a->next;
             b->next=head;
-        }
+        }*/
     }
 };
 

@@ -18,7 +18,7 @@ public :
 
 class Solution{
     int min=-1;
-    stack<int> s;
+    stack<int>s;
     stack<int>v;
     public:
     

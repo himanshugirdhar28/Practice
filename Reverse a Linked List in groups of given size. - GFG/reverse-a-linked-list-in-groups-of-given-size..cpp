@@ -52,7 +52,7 @@ class Solution
     struct node *reverse (struct node *head, int k)
     { 
         // Complete this method
-        node* a=head;
+       /* node* a=head;
         int count=0;
         vector<int>v;
         while(a!=NULL)
@@ -81,7 +81,27 @@ class Solution
             }
             
         }
-        return(head);
+        return(head);*/
+       node* next, *curr, *prev = NULL;
+       
+       curr = head;
+       
+       int i = 0 ; 
+       
+       while(curr != NULL && i < k)
+       {
+           next = curr->next;
+           curr->next = prev;            
+           prev = curr;
+           curr = next;
+           i++;
+       }
+       
+       if(next != NULL)
+           head->next = reverse(next, k);
+       
+       
+       return prev;
         
     }
 };

@@ -130,6 +130,20 @@ int intersectPoint(Node* head1, Node* head2)
         b=b->next;
     }
     return(x);
+    /*// Your Code Here
+   Node* a = head1;
+   Node* b = head2;
+   int point;
+   
+   while(a != b){
+       if(a == NULL) a = head2;
+       else a = a->next;
+       
+       if(b == NULL) b = head1;
+       else b = b->next;
+   }
+   point  = a->data;
+   return point;*/
     
 }
 

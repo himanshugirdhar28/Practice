@@ -24,11 +24,11 @@ class Solution{
     
        /*returns min element from stack*/
        int getMin(){
-           if(v.empty() && !s.empty())
+           /*if(v.empty() && !s.empty())
            {
                return(s.top());
-           }
-           else if(s.empty())
+           }*/
+           if(s.empty())
            {
                return(-1);
            }

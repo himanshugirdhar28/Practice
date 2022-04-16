@@ -10,34 +10,53 @@ class Solution
     //Function to find a continuous sub-array which adds up to a given number.
     vector<int> subarraySum(int arr[], int n, long long s)
     {
-    vector<int> v;
-    int i,c,d;
-    i=0;
-    int j=0;
-    int k=0;
-    int sum=0;
-    while(i<n)
-    {
-        sum=sum + arr[i];
-        if(sum==s)
+        // Your code here
+        queue<int>q;
+        vector<int>v;
+        long long int sum=0;
+        for(int i=0;i<n;i++)
         {
-        v.push_back(k+1);
-        v.push_back(i+1);
+            sum+=arr[i];
+            if(sum==s)
+            {
+                q.push(i+1);
+                break;
+            }
+            else if(sum<s)
+            {
+                q.push(i+1);
+                //cout<<q.front()<<endl;
+            }
+            else
+            {
+                    while(!q.empty() && sum>s)
+                    {
+                        sum-=arr[q.front()-1];
+                        //cout<<sum<<endl;
+                        q.pop();
+                    }
+                    //cout<<q.front()<<endl<<sum<<endl;
+                    q.push(i+1);
+                
+            }
+            if(sum==s)
+            {
+                break;
+            }
+        }
+        if(q.empty() || s!=sum)
+        {
+            v.push_back(-1);
             return(v);
         }
-        else if (sum>s && k<n-1)
+        v.push_back(q.front());
+        while(q.size()!=1)
         {
-        k=k+1;
-        i=k;
-        sum=0;
-        continue;
+            q.pop();
         }
-        else if (i==n-1){
-            v.push_back(-1);
-        return(v);}
-        i++;
-    }   
-}
+        v.push_back(q.front());
+        return(v);
+    }
 };
 
 // { Driver Code Starts.

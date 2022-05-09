@@ -146,11 +146,11 @@ vector<int> leftView(Node *root)
         x.push_back(v[i]->data);
         for(j=i;j<h;j++)
         {
-            if(v[j]==NULL || v[j]->left==NULL && v[j]->right==NULL)
+            if(v[j]==NULL || (v[j]->left==NULL && v[j]->right==NULL))
             {
                 continue;
             }
-            if(v[j]->left==NULL && v[j]->right!=NULL)
+            else if(v[j]->left==NULL && v[j]->right!=NULL)
             {
                 b=1;
                 v.push_back(v[j]->right);
@@ -166,15 +166,12 @@ vector<int> leftView(Node *root)
                 v.push_back(v[j]->left);
                 v.push_back(v[j]->right);
             }
-            
         }
         if(b==0)
         {
             break;
         }
         i=h;
-        
-        
     }
     return x;
 }

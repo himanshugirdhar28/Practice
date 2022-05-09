@@ -132,8 +132,8 @@ vector<int> leftView(Node *root)
    // Your code here
     vector<Node*>v;
     vector<int>x;
-    int i=0;
-    int j,b,h;
+    int j=0;
+    int b,h;
     if(root==NULL)
     {
         return x;
@@ -143,8 +143,8 @@ vector<int> leftView(Node *root)
     {
         b=0;
         h=v.size();
-        x.push_back(v[i]->data);
-        for(j=i;j<h;j++)
+        x.push_back(v[j]->data);
+        for(j;j<h;j++)
         {
             if(v[j]==NULL || (v[j]->left==NULL && v[j]->right==NULL))
             {
@@ -171,7 +171,7 @@ vector<int> leftView(Node *root)
         {
             break;
         }
-        i=h;
+        j=h;
     }
     return x;
 }

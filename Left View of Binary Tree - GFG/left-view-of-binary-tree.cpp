@@ -171,7 +171,6 @@ vector<int> leftView(Node *root)
         {
             break;
         }
-        j=h;
     }
     return x;
 }

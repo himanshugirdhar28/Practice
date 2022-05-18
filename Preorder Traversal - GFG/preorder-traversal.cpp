@@ -132,7 +132,7 @@ vector<int> left(Node *root, vector<int> & v)
     {
         return(v);
     }
-    v.push_back(root->data);
+    v.push_back(root->data); 
     left(root->left,v);
     left(root->right,v);
     return(v);

@@ -10,23 +10,10 @@ public:
         {
             return(1);
         } 
-        unordered_map<int,vector<vector<int>>>dict;
         unordered_map<int,int>dict1;
-        
-        int i,j,a,b,hg,gh;
-        /*for(i=0;i<grid.size();i++)
-        {
-            dict.insert({i,{}});
-            for(j=0;j<grid[i].size();j++)
-            {
-                if(grid[i][j]==0)
-                    dict[i].push_back({i,j});
-            }
-                
-        }*/
+        int i,j,a,b;
         dict1.insert({0,0});
         vector<vector<vector<int>>>l;
-        
         l={{{0,0}}};
         i=0;
         while(1)

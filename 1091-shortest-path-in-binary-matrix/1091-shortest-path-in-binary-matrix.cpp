@@ -27,13 +27,13 @@ public:
                         {
                             for(j=-1;j<2;j++)
                             {
-                                if(l[i][a][1]+j>=0 && l[i][a][1]+j<grid.size())
+                                if(l[i][a][1]+j>=0 && l[i][a][1]+j<grid.size() && grid[l[i][a][0]+b][l[i][a][1]+j]==0 )
                                 {
                                         if(l[i][a][0]+b==l[i][a][1]+j && l[i][a][0]+b==grid.size()-1)
                                         {
                                             return(l.size());
                                         }
-                                        if(dict1.find((l[i][a][0]+b)*100+l[i][a][1]+j)==dict1.end() && grid[l[i][a][0]+b][l[i][a][1]+j]==0 )
+                                        if(dict1.find((l[i][a][0]+b)*100+l[i][a][1]+j)==dict1.end())
                                         {
                                             dict1.insert({(l[i][a][0]+b)*100+l[i][a][1]+j,0});
                                             l[i+1].push_back({l[i][a][0]+b,l[i][a][1]+j});
@@ -47,8 +47,6 @@ public:
                         }
                         
                     }
-                    
-            
             }
             if(l[i].empty())
             {

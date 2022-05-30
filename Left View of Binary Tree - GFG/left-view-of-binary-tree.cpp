@@ -127,10 +127,27 @@ struct Node
  */
 
 //Function to return a list containing elements of left view of the binary tree.
+vector<int> left(Node *root, vector<int> & v, int & count)
+{
+    if(root==NULL)
+    {
+        return(v);
+    }
+    if(count==v.size())
+    {
+        v.push_back(root->data);
+    }
+    count++;
+    left(root->left,v,count);
+    left(root->right,v,count);
+    count--;
+    return(v);
+    
+}
 vector<int> leftView(Node *root)
 {
    // Your code here
-    vector<Node*>v;
+   /* vector<Node*>v;
     vector<int>x;
     int j=0;
     int b,h;
@@ -172,5 +189,9 @@ vector<int> leftView(Node *root)
             break;
         }
     }
-    return x;
+    return x;*/
+    int a,count;
+    count=0;
+    vector<int>v;
+    return(left(root,v,count));
 }

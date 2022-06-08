@@ -11,7 +11,6 @@ class Solution{
     { 
         // Complete the function
         int i=-1,j=1;
-        long long int sum=0;
         int res=0;
         int m=pow(10,5);
         if(a[0]==k)

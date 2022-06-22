@@ -11,8 +11,6 @@ class Solution:
         for i in range(n):
             dict[i]=[]
         i=0
-        j=0
-        dict[i].append([i,j])
         m=[]
         count=0
         while(1):

@@ -7,7 +7,6 @@ class Solution:
         if(n==1):
             return([[1]])
         a=[[0 for i in range(n)] for j in range(n)]
-        # print(a)
         dict={}
         for i in range(n):
             dict[i]=[]
@@ -70,8 +69,6 @@ class Solution:
                 dict[i][0][1]+=1
                 if(dict[0][0][0]==0 and dict[0][0][1]>=n):
                     break
-            # print(i,dict)
-            # print(a)
             if(i>=n):
                 m.append([0 for _ in range(n)])
                 for l in range(n):

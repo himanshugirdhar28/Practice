@@ -11,51 +11,49 @@ class Solution
     vector<int> subarraySum(int arr[], int n, long long s)
     {
         // Your code here
-        queue<int>q;
+        int i,k;
         vector<int>v;
-        long long int sum=0;
-        for(int i=0;i<n;i++)
+        long long sum=0,f=0;
+        for(i=0;i<n;i++)
         {
-            sum+=arr[i];
+            if(arr[i]>s)
+            {
+                sum=0;
+                continue;
+            }
+            if(sum==0)
+            {
+                sum+=arr[i];
+                k=i;
+                if(sum==s)
+                {
+                    v.push_back(i+1);
+                    v.push_back(i+1);
+                    return v;
+                }
+                continue;
+            }
+            f=sum+arr[i];
+            while(sum>0 && f>s)
+            {
+                sum-=arr[k];
+                f-=arr[k];
+                k+=1;
+            }
+            if(sum<s && arr[i]<=s)
+            {
+                sum+=arr[i];
+            }
+            // cout<<sum<<endl;
             if(sum==s)
             {
-                q.push(i+1);
-                break;
-            }
-            else if(sum<s)
-            {
-                q.push(i+1);
-                //cout<<q.front()<<endl;
-            }
-            else
-            {
-                    while(!q.empty() && sum>s)
-                    {
-                        sum-=arr[q.front()-1];
-                        //cout<<sum<<endl;
-                        q.pop();
-                    }
-                    //cout<<q.front()<<endl<<sum<<endl;
-                    q.push(i+1);
-                
-            }
-            if(sum==s)
-            {
-                break;
+                v.push_back(k+1);
+                v.push_back(i+1);
+                return(v);
             }
         }
-        if(q.empty() || s!=sum)
-        {
-            v.push_back(-1);
-            return(v);
-        }
-        v.push_back(q.front());
-        while(q.size()!=1)
-        {
-            q.pop();
-        }
-        v.push_back(q.front());
-        return(v);
+        v.push_back(-1);
+        return v;
     }
 };
 

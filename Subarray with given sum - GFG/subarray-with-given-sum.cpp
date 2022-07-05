@@ -30,7 +30,7 @@ class Solution
                 f-=arr[k];
                 k+=1;
             }
-            if(sum<s && arr[i]<=s)
+            if(sum<s)
             {
                 sum+=arr[i];
             }

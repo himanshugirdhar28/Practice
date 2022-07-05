@@ -23,18 +23,6 @@ class Solution
                 k=i+1;
                 continue;
             }
-            // if(sum==0)
-            // {
-            //     sum+=arr[i];
-            //     k=i;
-            //     if(sum==s)
-            //     {
-            //         v.push_back(i+1);
-            //         v.push_back(i+1);
-            //         return v;
-            //     }
-            //     continue;
-            // }
             f=sum+arr[i];
             while(sum>0 && f>s)
             {
@@ -42,7 +30,7 @@ class Solution
                 f-=arr[k];
                 k+=1;
             }
-            if(sum<=s && arr[i]<=s)
+            if(sum<s && arr[i]<=s)
             {
                 sum+=arr[i];
             }

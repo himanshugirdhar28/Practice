@@ -12,6 +12,7 @@ class Solution
     {
         // Your code here
         int i,k;
+        k=0;
         vector<int>v;
         long long sum=0,f=0;
         for(i=0;i<n;i++)
@@ -19,20 +20,21 @@ class Solution
             if(arr[i]>s)
             {
                 sum=0;
+                k=i+1;
                 continue;
             }
-            if(sum==0)
-            {
-                sum+=arr[i];
-                k=i;
-                if(sum==s)
-                {
-                    v.push_back(i+1);
-                    v.push_back(i+1);
-                    return v;
-                }
-                continue;
-            }
+            // if(sum==0)
+            // {
+            //     sum+=arr[i];
+            //     k=i;
+            //     if(sum==s)
+            //     {
+            //         v.push_back(i+1);
+            //         v.push_back(i+1);
+            //         return v;
+            //     }
+            //     continue;
+            // }
             f=sum+arr[i];
             while(sum>0 && f>s)
             {
@@ -40,11 +42,10 @@ class Solution
                 f-=arr[k];
                 k+=1;
             }
-            if(sum<s && arr[i]<=s)
+            if(sum<=s && arr[i]<=s)
             {
                 sum+=arr[i];
             }
-            // cout<<sum<<endl;
             if(sum==s)
             {
                 v.push_back(k+1);

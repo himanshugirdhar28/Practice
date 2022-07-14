@@ -23,7 +23,6 @@ class Solution {
     string longestPalin (string s) {
         // code here
         int n=s.size();
-        // vector<pair<int,int>>check;
         string rs=s;
         string ans,ansf;
         reverse(rs.begin(),rs.end());
@@ -31,12 +30,11 @@ class Solution {
         int i,j;
         int max=0;
         int x,y;
-        // pair<int,int>f;
         for(i=n-1;i>-1;i--)
         {
             for(j=n-1;j>-1;j--)
             {
-                if(s[i]==rs[j])
+                if(s[i]==s[n-1-j])
                 {
                     v[i][j]=1+v[i+1][j+1];
                 }
@@ -46,8 +44,6 @@ class Solution {
                 }
                 if(v[i][j]>=max)
                 {
-                    // check.push_back({i,j});
-                    // max=v[i][j];
                     ans="";
                     x=i;
                     y=j;
@@ -65,25 +61,6 @@ class Solution {
                 }
             }
         }
-        // int x;
-        // cout<<check.size()<<endl;
-        // for(x=check.size()-1;x>-1;x--)
-        // {
-        //     ans="";
-        //     i=check[x].first;
-        //     j=check[x].second;
-        //     while(v[i][j])
-        //     {
-        //         ans.push_back(s[i]);
-        //         i=i+1;
-        //         j=j+1;
-                
-        //     }
-        //     if(is_palindrome(ans))
-        //     {
-        //         return(ans);
-        //     }
-        // }
         return(ansf);
     }
 };

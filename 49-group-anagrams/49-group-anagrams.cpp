@@ -11,15 +11,9 @@ public:
             mp[s].push_back(strs[i]);
         }
         vector<vector<string>>v;
-        int j=0;
         for(auto it=mp.begin();it!=mp.end();it++)
         {
-            v.push_back({});
-            for(i=0;i<it->second.size();i++)
-            {
-                v[j].push_back(it->second[i]);
-            }
-            j++;
+            v.push_back(it->second);
         }
         return(v);
     }

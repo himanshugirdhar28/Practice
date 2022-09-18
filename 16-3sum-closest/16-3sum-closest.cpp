@@ -1,9 +1,20 @@
 class Solution {
 public:
+    void rev(vector<int>v)
+    {
+        reverse(v.begin(),v.end());
+        int x=0;
+        for(int i=0;i<v.size();i++)
+        {
+            x+=v[i];
+        }
+        reverse(v.begin(),v.end());
+    }
     int threeSumClosest(vector<int>& nums, int target) {
-        int min_diff = INT_MAX;
-        int ans;
+        int a = INT_MAX;
+        int b;
         sort(nums.begin() , nums.end());
+        rev(nums);
         
         for(int i = 0 ; i < nums.size() - 2 ; i++){
             if(i == 0 || nums[i] != nums[i-1]){
@@ -12,9 +23,9 @@ public:
                 
                 while(low < high){
                     int sum = nums[i] + nums[low] + nums[high];
-                    if(abs(target - sum) < min_diff){
-                        min_diff = abs(target - sum);
-                        ans = sum;
+                    if(abs(target - sum) < a){
+                        a = abs(target - sum);
+                        b = sum;
                     }
                     if(sum == target){
                         return sum;
@@ -26,7 +37,7 @@ public:
                 }
             }
         }
-        return ans;
+        return b;
         
     }
 };

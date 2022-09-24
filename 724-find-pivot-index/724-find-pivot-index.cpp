@@ -17,7 +17,7 @@ public:
             sum_r+=nums[i];
             v1[i]=sum_r;
         }
-        if((v.size()>=2 && v1[1]==0) || (v.size()==1 && v[0]==0))
+        if((v.size()>=2 && v1[1]==0) || (v.size()==1))
         {
             return(0);
         }

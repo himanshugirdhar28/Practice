@@ -32,4 +32,8 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0189-rotate-array](https://github.com/himanshugirdhar28/Practice/tree/master/0189-rotate-array) |
+## Database
+|  |
+| ------- |
+| [1161-project-employees-i](https://github.com/himanshugirdhar28/Practice/tree/master/1161-project-employees-i) |
 <!---LeetCode Topics End-->

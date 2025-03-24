@@ -38,6 +38,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [1161-project-employees-i](https://github.com/himanshugirdhar28/Practice/tree/master/1161-project-employees-i) |
+| [1773-percentage-of-users-attended-a-contest](https://github.com/himanshugirdhar28/Practice/tree/master/1773-percentage-of-users-attended-a-contest) |
 ## Dynamic Programming
 |  |
 | ------- |

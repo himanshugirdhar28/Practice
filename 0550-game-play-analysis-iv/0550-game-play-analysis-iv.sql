@@ -1,0 +1,3 @@
+-- Write your PostgreSQL query statement below
+select round(sum(case when n_t.last_login_date is not null and n_t.event_date = n_t.last_login_date + interval '1 day' then 1 else 0 end)::numeric / count(distinct(n_t.player_id)),2) as fraction from 
+(select *, (lag(event_date) over(partition by player_id order by event_date asc)) as last_login_date, dense_rank() over(partition by player_id order by event_date) as d_r  from Activity) as n_t where n_t.d_r <3
